@@ -1,7 +1,11 @@
-export default function ContactsItem({ contact: { name, number } }) {
+export default function ContactsItem({
+  contact: { id, name, number },
+  onDeleteContact,
+}) {
   return (
     <li>
-      {name}: {number}
+      {name}: {number}{' '}
+      <button onClick={() => onDeleteContact(id)}>Delete</button>
     </li>
   );
 }
