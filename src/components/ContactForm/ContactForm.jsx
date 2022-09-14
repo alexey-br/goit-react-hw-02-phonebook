@@ -1,5 +1,6 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import { InputItem, Input, InputLabel, SubmitBtn, ValidationError } from './ContactForm.styled';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -24,34 +25,23 @@ const ContactForm = ({ addContact }) => {
       onSubmit={handleSubmit}
     >
       <Form>
-        <label>
-          Name
-          <Field
+        <InputItem>
+          <InputLabel>Name:</InputLabel>
+          <Input
             type="text"
             name="name"
-            // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            // required
-            // value={this.state.name}
-            // onChange={this.handleInput}
           />
-          <ErrorMessage component="div" name="name" />
-        </label>
-        <br />
-        <label>
-          Number
-          <Field
+          <ValidationError component="span" name="name" />
+        </InputItem>
+        <InputItem>
+          <InputLabel>Number:</InputLabel>
+          <Input
             type="tel"
             name="number"
-            // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            // required
-            // value={this.state.number}
-            // onChange={this.handleInput}
           />
-          <ErrorMessage component="div" name="number" />
-        </label>
-        <button type="submit">Add contact</button>
+          <ValidationError component="span" name="number" />
+        </InputItem>
+        <SubmitBtn type="submit">Add contact</SubmitBtn>
       </Form>
     </Formik>
   );
