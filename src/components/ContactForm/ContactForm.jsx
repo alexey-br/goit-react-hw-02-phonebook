@@ -1,6 +1,13 @@
-import { Formik, Form, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import * as yup from 'yup';
-import { InputItem, Input, InputLabel, SubmitBtn, ValidationError } from './ContactForm.styled';
+import PropTypes from 'prop-types';
+import {
+  InputItem,
+  Input,
+  InputLabel,
+  SubmitBtn,
+  ValidationError,
+} from './ContactForm.styled';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -27,18 +34,12 @@ const ContactForm = ({ addContact }) => {
       <Form>
         <InputItem>
           <InputLabel>Name:</InputLabel>
-          <Input
-            type="text"
-            name="name"
-          />
+          <Input type="text" name="name" />
           <ValidationError component="span" name="name" />
         </InputItem>
         <InputItem>
           <InputLabel>Number:</InputLabel>
-          <Input
-            type="tel"
-            name="number"
-          />
+          <Input type="tel" name="number" />
           <ValidationError component="span" name="number" />
         </InputItem>
         <SubmitBtn type="submit">Add contact</SubmitBtn>
@@ -48,3 +49,7 @@ const ContactForm = ({ addContact }) => {
 };
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+  addContact: PropTypes.func.isRequired,
+};

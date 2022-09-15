@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
+import Box from 'components/Box';
 import ContactsItem from './ContactsItem';
 
 export default function ContactList({ contacts, onDeleteContact }) {
   return (
-    <ul>
+    <Box as="ul" pl={0}>
       {contacts.map(contact => {
         return (
           <ContactsItem
@@ -12,6 +14,17 @@ export default function ContactList({ contacts, onDeleteContact }) {
           />
         );
       })}
-    </ul>
+    </Box>
   );
 }
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+  onDeleteContact: PropTypes.func.isRequired,
+};

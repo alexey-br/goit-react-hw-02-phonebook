@@ -55,9 +55,13 @@ export class App extends Component {
 
     return (
       <Box m={4}>
-        <Box as='h1' mt={0} mb={4}>Phonebook</Box>
+        <Box as="h1" mt={0} mb={4} color="accent">
+          Phonebook
+        </Box>
         <ContactForm addContact={this.handleAddContact} />
-        <h2>Contacts</h2>
+        <Box as="h2" mt={5} mb={3} color="accent">
+          Contacts:
+        </Box>
         <Filter text={this.state.filter} onInput={this.handleFilterInput} />
         <ContactList
           contacts={filteredContacts}
