@@ -5,7 +5,6 @@ import ContactsItem from './ContactsItem';
 export default function ContactList({ contacts, onDeleteContact }) {
   return (
     <Box as="ul" pl={0}>
-      {console.log(contacts[0])}
       {contacts.map(contact => {
         return (
           <ContactsItem
