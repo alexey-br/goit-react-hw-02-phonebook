@@ -5,6 +5,7 @@ import ContactsItem from './ContactsItem';
 export default function ContactList({ contacts, onDeleteContact }) {
   return (
     <Box as="ul" pl={0}>
+      {console.log(contacts[0])}
       {contacts.map(contact => {
         return (
           <ContactsItem
@@ -21,7 +22,7 @@ export default function ContactList({ contacts, onDeleteContact }) {
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
-      key: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
     })
