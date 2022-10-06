@@ -19,7 +19,7 @@ export const Input = styled(Field)`
   margin-right: ${({ theme }) => theme.space[3]}px;
   width: 200px;
   border: ${({ theme }) => theme.borders.normal};
-  border-radius: ${({ theme }) => theme.radii.normal};
+  border-radius: ${({ theme }) => theme.radius.normal};
   border-color: ${({ theme }) => theme.colors.accent};
   box-shadow: ${({ theme }) => theme.shadows.normal};
 `;
@@ -28,7 +28,7 @@ export const SubmitBtn = styled.button`
   padding: ${({ theme }) => theme.space[2]}px;
   font-size: inherit;
   font-family: inherit;
-  border-radius: ${({ theme }) => theme.radii.normal};
+  border-radius: ${({ theme }) => theme.radius.normal};
   border: ${({ theme }) => theme.borders.normal};
   border-color: ${({ theme }) => theme.colors.accent};
   cursor: pointer;
