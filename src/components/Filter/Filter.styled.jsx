@@ -11,7 +11,7 @@ export const FilterInput = styled.input`
   padding: ${({ theme }) => theme.space[2]}px;
   width: 200px;
   border: ${({ theme }) => theme.borders.normal};
-  border-radius: ${({ theme }) => theme.radius.normal};
+  border-radius: ${({ theme }) => theme.radii.normal};
   border-color: ${({ theme }) => theme.colors.accent};
   box-shadow: ${({ theme }) => theme.shadows.normal};
 `;

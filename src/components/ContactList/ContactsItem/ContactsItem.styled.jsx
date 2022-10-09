@@ -17,7 +17,7 @@ export const ContactIcon = styled(IoIosContact)`
 
 export const DeleteBtn = styled.button`
   font-family: inherit;
-  border-radius: ${({ theme }) => theme.radius.normal};
+  border-radius: ${({ theme }) => theme.radii.normal};
   border: ${({ theme }) => theme.borders.normal};
   border-color: ${({ theme }) => theme.colors.accent};
   cursor: pointer;
