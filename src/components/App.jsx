@@ -4,6 +4,7 @@ import ContactForm from './ContactForm';
 import Filter from './Filter';
 import ContactList from './ContactList';
 import Box from './Box';
+import { ContactsHeader, PhonebookHeader } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -55,13 +56,9 @@ export class App extends Component {
 
     return (
       <Box m={4}>
-        <Box as="h1" mt={0} mb={4} color="accent">
-          Phonebook
-        </Box>
+        <PhonebookHeader>Phonebook</PhonebookHeader>
         <ContactForm addContact={this.handleAddContact} />
-        <Box as="h2" mt={5} mb={3} color="accent">
-          Contacts:
-        </Box>
+        <ContactsHeader>Contacts:</ContactsHeader>
         <Filter text={this.state.filter} onInput={this.handleFilterInput} />
         <ContactList
           contacts={filteredContacts}
