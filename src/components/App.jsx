@@ -3,8 +3,11 @@ import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm';
 import Filter from './Filter';
 import ContactList from './ContactList';
-import Box from './Box';
-import { ContactsHeader, PhonebookHeader } from './App.styled';
+import Box from './reusableComponents/Box';
+import {
+  HeaderH1,
+  HeaderH2,
+} from './reusableComponents/Headers/Headers.styled';
 
 export class App extends Component {
   state = {
@@ -56,9 +59,9 @@ export class App extends Component {
 
     return (
       <Box m={4}>
-        <PhonebookHeader>Phonebook</PhonebookHeader>
+        <HeaderH1>Phonebook</HeaderH1>
         <ContactForm addContact={this.handleAddContact} />
-        <ContactsHeader>Contacts:</ContactsHeader>
+        <HeaderH2>Contacts:</HeaderH2>
         <Filter text={this.state.filter} onInput={this.handleFilterInput} />
         <ContactList
           contacts={filteredContacts}
